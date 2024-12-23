@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Education Chatbot</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <!-- Chatbot Interface -->
+    <div class="chatbot-container">
+        <div class="chatbox">
+            <div class="chatbox-header">
+                <h3>Smart Education Assistant</h3>
+                <button class="close-btn" onclick="closeChatbot()">X</button>
+            </div>
+            <div class="chatbox-body" id="chatbox-body">
+                <div class="bot-message">
+                    <p>Hello! How can I assist you today?</p>
+                </div>
+            </div>
+            <div class="chatbox-footer">
+                <input type="text" id="user-input" placeholder="Type your message..." onkeydown="checkInput(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" onclick="toggleChatbot()">Chat with us</button>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 14.07.28_8612f05e.jpg);
+}
+
+.store-section {
+    position: relative;
+    top: 100px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.store-section h2 {
+    color: #4CAF50;
+}
+
+.store-section p {
+    color: #555;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #e0f7fa; /* Light blue background for products */
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+    width: 100%; /* Full width for images */
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 16px;
+    color: #d32f2f; /* Dark red for prices */
+}
+
+.add-to-cart {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

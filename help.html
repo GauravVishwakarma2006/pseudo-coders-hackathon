@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="help.css">
+    <title>Help Section</title>
+</head>
+<body>
+    <section class="help-section">
+        <h2>Need Help?</h2>
+        <p>If you have any questions, check out our FAQs below or contact us for assistance!</p>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>📚 What subjects do you offer?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a variety of subjects including Math, Science, English, and more!</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>🖥️ How do I access the online classes?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can access classes through your dashboard after logging in to your account.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleAnswer(this)">
+                    <span>📞 How can I contact support?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>You can contact our support team via the contact form or email us at support@kidlearn.com.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            answer.classList.toggle('show');
+            icon.textContent = answer.classList.contains('show') ? '-' : '+';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 13.08.48_e6566238.jpg);
+}
+
+header {
+    background-color: #4f7ae6; /* Green background */
+    padding: 10px 20px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+}
+
+.search-container input {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 5px;
+    border: none;
+    background-color: #f1c40f; /* Yellow background */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.class-nav {
+    background-color: #434040; 
+    padding: 10px 0;
+}
+
+.class-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.class-links li {
+    margin: 0 15px;
+}
+
+.class-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.class-links a:hover {
+    text-decoration: underline;
+}
+
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 10px; /* Increased padding for a larger size */
+    border: none;
+    border-radius: 20px; /* Added border radius for a softer look */
+    width: 700px; /* Set a width for the input */
+    outline: none; /* Remove default outline */
+}
+
+.search-container button {
+    padding: 10px; /* Increased padding for button */
+    border: none;
+    background-color: #f1c40f; /* Yellow background */
+    cursor: pointer;
+    border-radius: 20px; /* Matching border radius with input */
+    margin-left: 5px; /* Space between input and button */
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.class-nav {
+    background-color: #3b3c3d; /* Blue background */
+    padding: 10px 0;
+    border-radius: 50px;
+}
+
+.class-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.class-links li {
+    margin: 0 15px;
+}
+
+.class-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+} */
+
+.class-links a:hover {
+    color: rgb(188, 71, 71);
+    text-decoration: underline; /* Underline on hover */
+}

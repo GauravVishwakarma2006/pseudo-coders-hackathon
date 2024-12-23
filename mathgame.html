@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Magician - Color Quest</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #9be0d0;
+      margin: 0;
+      padding: 20px;
+      background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 14.19.32_3da39b11.jpg);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #canvas-container {
+      margin: 20px auto;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: rgb(225, 209, 120);
+      border: 2px solid #ccc;
+    }
+
+    .color-section {
+      position: absolute;
+      border: 1px solid #ddd;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    #math-question {
+      margin: 20px 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 150px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #6ec1e4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #4a96b6;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #reset-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #reset-button:hover {
+      background-color: #cc5151;
+    }
+  </style>
+</head>
+<body>
+  <h1>Math Magician: Color Quest</h1>
+  <p>Solve math problems to color the sections and complete the picture!</p>
+
+  <div id="canvas-container">
+    <!-- Sections to color -->
+    <div class="color-section" id="section1" style="top: 50px; left: 100px; width: 100px; height: 50px;"></div>
+    <div class="color-section" id="section2" style="top: 120px; left: 150px; width: 70px; height: 70px;"></div>
+    <div class="color-section" id="section3" style="top: 200px; left: 50px; width: 80px; height: 80px;"></div>
+    <div class="color-section" id="section4" style="top: 150px; left: 20px; width: 60px; height: 60px;"></div>
+  </div>
+
+  <!-- Math question -->
+  <div id="math-question">What is 3 + 5?</div>
+  <input type="text" id="answer-input" placeholder="Enter your answer">
+  <button id="submit-button">Submit</button>
+
+  <div id="message"></div>
+
+  <button id="reset-button" style="display:none;">Reset Game</button>
+
+  <script>
+    const questions = [
+      { question: "What is 3 + 5?", answer: 8, section: "section1" },
+      { question: "What is 10 - 4?", answer: 6, section: "section2" },
+      { question: "What is 7 x 3?", answer: 21, section: "section3" },
+      { question: "What is 16 / 4?", answer: 4, section: "section4" }
+    ];
+
+    let currentQuestionIndex = 0;
+    const answerInput = document.getElementById("answer-input");
+    const submitButton = document.getElementById("submit-button");
+    const resetButton = document.getElementById("reset-button");
+    const mathQuestion = document.getElementById("math-question");
+    const message = document.getElementById("message");
+
+    // Update question
+    function updateQuestion() {
+      if (currentQuestionIndex < questions.length) {
+        mathQuestion.textContent = questions[currentQuestionIndex].question;
+        answerInput.value = "";
+      } else {
+        mathQuestion.textContent = "Congratulations! You've completed the quest!";
+        message.textContent = "";
+        submitButton.style.display = "none";
+        resetButton.style.display = "block";
+      }
+    }
+
+    // Handle submit
+    submitButton.addEventListener("click", () => {
+      const userAnswer = parseInt(answerInput.value, 10);
+      const correctAnswer = questions[currentQuestionIndex].answer;
+      const sectionId = questions[currentQuestionIndex].section;
+
+      if (userAnswer === correctAnswer) {
+        const section = document.getElementById(sectionId);
+        section.style.backgroundColor = getRandomColor();
+        message.textContent = "Correct! Well done!";
+        message.style.color = "green";
+        currentQuestionIndex++;
+        updateQuestion();
+      } else {
+        message.textContent = "Oops! Try again.";
+        message.style.color = "red";
+      }
+    });
+
+    // Reset game
+    resetButton.addEventListener("click", () => {
+      currentQuestionIndex = 0;
+      document.querySelectorAll(".color-section").forEach(section => {
+        section.style.backgroundColor = "#f0f0f0";
+      });
+      submitButton.style.display = "block";
+      resetButton.style.display = "none";
+      message.textContent = "";
+      updateQuestion();
+    });
+
+    // Generate random color
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Initialize game
+    updateQuestion();
+  </script>
+</body>
+</html>

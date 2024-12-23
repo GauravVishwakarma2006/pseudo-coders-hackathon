@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Art Game</title>
+    <link rel="stylesheet" href="art&craft.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Creative Art Game</h1>
+        <div id="controls">
+            <button id="clear">Clear Canvas</button>
+            <label for="color-picker">Choose Color: </label>
+            <input type="color" id="color-picker" value="#000000">
+            <label for="brush-size">Brush Size: </label>
+            <input type="range" id="brush-size" min="1" max="50" value="5">
+        </div>
+        <canvas id="art-canvas"></canvas>
+    </div>
+
+    <script src="art&craft.js"></script>
+</body>
+</html>

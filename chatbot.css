@@ -1,0 +1,96 @@
+body{
+    background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 14.13.00_c8c40721.jpg);
+}
+
+
+/* Chatbot Styles */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chatbox {
+    display: none;
+    width: 300px;
+    height: 400px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbox-header {
+    background-color: #5c5c5c;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox-body {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    color: white;
+}
+
+.chatbox-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chatbox-footer input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.chatbox-footer button {
+    padding: 10px;
+    border: none;
+    background-color: #ffd700;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: #ffbb00;
+}
+
+.chatbot-toggle {
+    background-color: #5c5c5c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chatbot-toggle:hover {
+    background-color: #ffd700;
+}
+
+.bot-message, .user-message {
+    background-color: #444;
+    color: white;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #5c5c5c;
+    text-align: right;
+}

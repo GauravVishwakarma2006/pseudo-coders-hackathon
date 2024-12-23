@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #e8f0fe; /* Light blue background for a cheerful look */
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50; /* Green header */
+    color: white;
+}
+
+.main-section {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #4CAF50; /* Green for section heading */
+    margin-top: 20px;
+}
+
+.feature-boxes {
+    display: flex;
+    justify-content: space-around; /* Space evenly around boxes */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between boxes */
+    margin-top: 20px;
+}
+
+.feature-box {
+    background-color: #ffffff; /* White background for boxes */
+    border-radius: 10px;
+    padding: 15px;
+    width: 180px; /* Fixed width for boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effects */
+    text-align: center;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px); /* Lift the box up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.feature-box img {
+    width: 100%; /* Full width for images */
+    border-radius: 5px;
+}
+
+h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+p {
+    color: #555;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50; /* Green footer */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

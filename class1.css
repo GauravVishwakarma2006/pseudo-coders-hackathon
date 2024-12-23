@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #e0f7fa; /* Light blue background for a cheerful look */
+    background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 13.23.42_9821498e.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #9fb2e8; /* Yellow header */
+    color: #333;
+}
+
+.main-section {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: whitesmoke; /* Orange for section heading */
+    margin-top: 20px;
+}
+
+.activity-boxes {
+    display: flex;
+    justify-content: space-around; /* Space evenly around boxes */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between boxes */
+    margin-top: 20px;
+}
+
+.activity-box {
+    background-color: #ffffff; /* White background for boxes */
+    border-radius: 10px;
+    padding: 15px;
+    width: 180px; /* Fixed width for boxes */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for hover effects */
+    text-align: center;
+    opacity: 0; /* Start with opacity 0 */
+    animation: fadeIn 0.5s forwards; /* Fade in animation */
+}
+
+.activity-box:nth-child(1) { animation-delay: 0s; }
+.activity-box:nth-child(2) { animation-delay: 0.1s; }
+.activity-box:nth-child(3) { animation-delay: 0.2s; }
+.activity-box:nth-child(4) { animation-delay: 0.3s; }
+.activity-box:nth-child(5) { animation-delay: 0.4s; }
+
+.activity-box:hover {
+    transform: translateY(-5px); /* Lift the box up on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+.activity-box img {
+    width: 100%; /* Full width for images */
+    border-radius: 5px;
+}
+
+h3 {
+    color: #333;
+    margin: 10px 0;
+}
+
+p {
+    color: #555;
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #98abde; /* Yellow footer */
+    color: #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    position: absolute ;
+    bottom: 0px;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade in to full visibility */
+    }
+}

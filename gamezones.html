@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alphabetical Order Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f8ff;
+      background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 14.21.17_55b469e9.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .game-container {
+      width: 600px;
+      text-align: center;
+    }
+
+    .letters-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .letter {
+      width: 60px;
+      height: 60px;
+      background: #6ec1e4;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      cursor: grab;
+    }
+
+    .letter.dragging {
+      opacity: 0.5;
+    }
+
+    #message {
+      font-size: 1.2rem;
+      color: whitesmoke;
+      margin-top: 20px;
+    }
+
+    button {
+      background: #6ec1e4;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5799c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1 style="color: whitesmoke;">Alphabetical Order Game</h1>
+    <p style="color: whitesmoke;">Drag and drop the letters to arrange them in alphabetical order.</p>
+    <div class="letters-container" id="lettersContainer">
+      <!-- Letters will be dynamically generated -->
+    </div>
+    <button id="resetButton">Reset</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const lettersContainer = document.getElementById('lettersContainer');
+    const resetButton = document.getElementById('resetButton');
+    const message = document.getElementById('message');
+
+    // Initialize letters
+    let letters = [];
+
+    function initGame() {
+      lettersContainer.innerHTML = '';
+      message.textContent = '';
+      letters = 'ABCDEFGHI'.split(''); // Use a subset of the alphabet
+      shuffleArray(letters);
+      letters.forEach(createLetter);
+    }
+
+    // Shuffle array
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    // Create a letter element
+    function createLetter(letter) {
+      const letterDiv = document.createElement('div');
+      letterDiv.classList.add('letter');
+      letterDiv.textContent = letter;
+      letterDiv.draggable = true;
+
+      // Drag events
+      letterDiv.addEventListener('dragstart', handleDragStart);
+      letterDiv.addEventListener('dragover', handleDragOver);
+      letterDiv.addEventListener('drop', handleDrop);
+      letterDiv.addEventListener('dragend', handleDragEnd);
+
+      lettersContainer.appendChild(letterDiv);
+    }
+
+    // Dragging handlers
+    function handleDragStart(e) {
+      e.target.classList.add('dragging');
+      e.dataTransfer.setData('text/plain', e.target.textContent);
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      const dragging = document.querySelector('.dragging');
+      if (dragging) {
+        const target = e.target.closest('.letter');
+        if (target && target !== dragging) {
+          const targetIndex = [...lettersContainer.children].indexOf(target);
+          lettersContainer.insertBefore(dragging, targetIndex > [...lettersContainer.children].indexOf(dragging) ? target.nextSibling : target);
+        }
+      }
+    }
+
+    function handleDrop(e) {
+      e.preventDefault();
+    }
+
+    function handleDragEnd(e) {
+      e.target.classList.remove('dragging');
+      checkOrder();
+    }
+
+    // Check if letters are in alphabetical order
+    function checkOrder() {
+      const currentOrder = [...lettersContainer.children].map((child) => child.textContent).join('');
+      if (currentOrder === letters.sort().join('')) {
+        message.textContent = 'Congratulations! The letters are in alphabetical order!';
+      } else {
+        message.textContent = '';
+      }
+    }
+
+    // Reset game
+    resetButton.addEventListener('click', initGame);
+
+    // Start the game
+    initGame();
+  </script>
+</body>
+</html>

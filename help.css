@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f8ff;
+    background-image: url(WhatsApp\ Image\ 2024-12-21\ at\ 14.12.11_33f224e8.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.help-section {
+    position: relative;
+    top: 100px;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.help-section h2 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.help-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.faq {
+    border-top: 2px solid #4CAF50;
+    padding-top: 10px;
+}
+
+.faq-item {
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden; /* Ensures rounded corners apply to the content */
+}
+
+.faq-question {
+    background-color: #e0f7fa; /* Light blue background */
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none; /* Hidden by default */
+    padding: 15px;
+    background-color: #ffffff; /* White background for answers */
+    color: #333;
+}
+
+.faq-answer.show {
+    display: block; /* Show answer when toggled */
+}
+
+.toggle-icon {
+    font-size: 18px; /* Icon size */
+    color: #4CAF50; /* Green color for the icon */
+}
